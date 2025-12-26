@@ -1,0 +1,25 @@
+-- Create phones table
+CREATE TABLE IF NOT EXISTS phones (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  model VARCHAR(255) NOT NULL,
+  brand VARCHAR(100) NOT NULL,
+  category ENUM('smartphone', 'tablet', 'feature_phone', 'accessory') DEFAULT 'smartphone',
+  price DECIMAL(10, 2),
+  currency VARCHAR(10) DEFAULT 'DZD',
+  `condition` ENUM('new', 'like_new', 'used', 'for_parts') DEFAULT 'new',
+  image_url TEXT,
+  source_url TEXT,
+  marketplace_name ENUM('ouedkniss', 'jumia', 'facebook') NOT NULL,
+  listing_count INT DEFAULT 1,
+  stock_level INT DEFAULT 0,
+  availability_status ENUM('in_stock', 'limited_stock', 'out_of_stock') DEFAULT 'in_stock',
+  scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_brand (brand),
+  INDEX idx_category (category),
+  INDEX idx_marketplace (marketplace_name),
+  INDEX idx_price (price),
+  INDEX idx_availability (availability_status),
+  INDEX idx_model_brand (model, brand)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,56 @@
+{
+  "name": "algerian-phone-market-scraper",
+  "version": "1.0.0",
+  "description": "Automated phone market scraper for Algerian marketplaces (Ouedkniss, Jumia, Facebook Marketplace)",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon backend/server.js",
+    "client:dev": "cd frontend && npm run dev",
+    "server": "node backend/server.js",
+    "scheduler": "node backend/scheduler/index.js",
+    "migrate": "node backend/database/migrate.js",
+    "seed": "node backend/database/seed.js",
+    "scrape:ouedkniss": "node backend/scrapers/runScraper.js ouedkniss",
+    "scrape:jumia": "node backend/scrapers/runScraper.js jumia",
+    "scrape:facebook": "node backend/scrapers/runScraper.js facebook",
+    "scrape:stores": "node backend/scripts/scrape-stores.js",
+    "scrape:all": "node backend/scrapers/runScraper.js all",
+    "build": "cd frontend && npm run build",
+    "start": "node backend/server.js"
+  },
+  "keywords": [
+    "scraper",
+    "algeria",
+    "phone",
+    "marketplace",
+    "ouedkniss",
+    "jumia",
+    "facebook"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.5",
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.6.1",
+    "node-cron": "^3.0.3",
+    "winston": "^3.11.0",
+    "fuzzball": "^2.1.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "joi": "^17.11.0",
+    "nodemailer": "^6.9.7",
+    "uuid": "^9.0.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2"
+  }
+}
