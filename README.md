@@ -1,6 +1,6 @@
 # Algerian Phone Market Scraper
 
-Avibe Coded Automated phone market scraper for Algerian marketplaces including Ouedkniss, Jumia Algeria, and Facebook Marketplace. This system provides real-time data aggregation, population tracking, price trend analysis, and comprehensive market insights.
+A vibe Coded Automated phone market scraper for Algerian marketplaces including Ouedkniss, Jumia Algeria, and Facebook Marketplace. This system provides real-time data aggregation, population tracking, price trend analysis, and comprehensive market insights.
 
 ## Features
 
