@@ -32,7 +32,7 @@ async function scrapeStores() {
             await db.query(
               `UPDATE phones SET 
                 brand = ?, category = ?, price = ?, currency = ?, 
-                condition_type = ?, image_url = ?, source_url = ?, 
+                \`condition\` = ?, image_url = ?, source_url = ?, 
                 location = ?, seller_name = ?, seller_type = ?,
                 updated_at = NOW()
               WHERE id = ?`,
@@ -48,7 +48,7 @@ async function scrapeStores() {
             // Insert new
             await db.query(
               `INSERT INTO phones (
-                brand, model, category, price, currency, condition_type,
+                brand, model, category, price, currency, \`condition\`,
                 image_url, source_url, marketplace_name, listing_count,
                 stock_level, availability_status, location, seller_name, seller_type
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,

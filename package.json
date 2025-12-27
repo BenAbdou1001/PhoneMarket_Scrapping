@@ -16,6 +16,9 @@
     "scrape:facebook": "node backend/scrapers/runScraper.js facebook",
     "scrape:stores": "node backend/scripts/scrape-stores.js",
     "scrape:all": "node backend/scrapers/runScraper.js all",
+    "clean:data": "node backend/scripts/clean-data.js",
+    "clean:data:dry": "node backend/scripts/clean-data.js --dry-run",
+    "clean:data:all": "node backend/scripts/clean-data.js --all",
     "build": "cd frontend && npm run build",
     "start": "node backend/server.js"
   },
